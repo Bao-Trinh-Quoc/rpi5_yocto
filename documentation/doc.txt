@@ -40,3 +40,25 @@ git clone <layer_git> -b <branch_name>
 Cooking (bitbake'ing) the image recipe
 ################################
 bitbake core-image-minimal
+
+
+put this in local.conf to speedup the build and avoid OOM errors.
+===============
+# Limit the number of parallel BitBake tasks
+BB_NUMBER_THREADS = "2"
+
+# Limit the number of threads per Make process
+PARALLEL_MAKE = "-j 4"
+
+Add swap file
+# Create a 16GB file
+sudo fallocate -l 16G /swapfile
+
+# Set the correct permissions
+sudo chmod 600 /swapfile
+
+# Format it as swap
+sudo mkswap /swapfile
+
+# Enable the swap space
+sudo swapon /swapfile
