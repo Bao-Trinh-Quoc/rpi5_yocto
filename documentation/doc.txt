@@ -1,0 +1,4 @@
+
+######## setup build env
+
+. oe-init-build-env
