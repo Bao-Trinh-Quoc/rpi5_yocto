@@ -45,7 +45,7 @@ bitbake core-image-minimal
 put this in local.conf to speedup the build and avoid OOM errors.
 ===============
 # Limit the number of parallel BitBake tasks
-BB_NUMBER_THREADS = "2"
+BB_NUMBER_THREADS = "21"
 
 # Limit the number of threads per Make process
 PARALLEL_MAKE = "-j 4"
